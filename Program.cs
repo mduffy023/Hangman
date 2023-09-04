@@ -29,7 +29,7 @@
             }
             List<char> guessedLetters = new List<char>();
 
-            while (gameStateLetters.Contains('_'))
+            while (gameStateLetters.Contains(PLACEHOLDER) && guessesLeft > 0)
             {
                 Console.Clear();
                 Console.WriteLine($"Word: {string.Concat(gameStateLetters)}");
@@ -76,11 +76,11 @@
             }
 
             // Check and display if player has won or lost
-            if (!gameStateLetters.Contains('_'))
+            if (!gameStateLetters.Contains(PLACEHOLDER))
             {
                 Console.WriteLine($"Congratulations! You guessed the word: {wordToGuess}");
             }
-            else if (guessesLeft == 0)
+            else if (guessesLeft <= 0)
             {
                 Console.WriteLine($"You lose! The word was: {wordToGuess}");
             }
