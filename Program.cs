@@ -9,7 +9,6 @@
             const int MAX_GUESSES = 6;
             int guessesLeft = MAX_GUESSES;
 
-
             List<string> words = new List<string>
             {
             "hunting",
@@ -20,17 +19,14 @@
             "wire",
             "looting"
             };
-
             // Generate a random word for the player to guess
             Random randomWord = new Random();
-
             string wordToGuess = words[randomWord.Next(words.Count)];
             char[] gameStateLetters = new char[wordToGuess.Length];
             for (int i = 0; i < gameStateLetters.Length; i++)
             {
                 gameStateLetters[i] = '_';
             }
-
             List<char> guessedLetters = new List<char>();
 
             while (gameStateLetters.Contains('_'))
@@ -61,7 +57,6 @@
                 // Add guessed letter to the list of guessed letters
                 guessedLetters.Add(guess);
 
-
                 // Check if the guessed letter is in the word
                 if (wordToGuess.Contains(guess))
                 {
@@ -87,7 +82,6 @@
             {
                 Console.WriteLine($"Congratulations! You guessed the word: {wordToGuess}");
             }
-
             else if (guessesLeft == 0)
             {
                 Console.WriteLine($"You lose! The word was: {wordToGuess}");
