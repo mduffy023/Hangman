@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hangman game");
-
+            const char PLACEHOLDER = '_';
             const int MAX_GUESSES = 6;
             int guessesLeft = MAX_GUESSES;
 
@@ -25,7 +25,7 @@
             char[] gameStateLetters = new char[wordToGuess.Length];
             for (int i = 0; i < gameStateLetters.Length; i++)
             {
-                gameStateLetters[i] = '_';
+                gameStateLetters[i] = PLACEHOLDER;
             }
             List<char> guessedLetters = new List<char>();
 
