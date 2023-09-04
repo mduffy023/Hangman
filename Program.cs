@@ -34,10 +34,8 @@
                 Console.Clear();
                 Console.WriteLine($"Word: {string.Concat(gameStateLetters)}");
                 Console.WriteLine($"Attempts left: {guessesLeft}");
-            
                 Console.Write("Guess a letter: ");
                 char guess = Console.ReadKey().KeyChar;
-                guess = char.ToLower(guess);
                 Console.WriteLine("\n");
 
                 // Check if letter has already been guessed
